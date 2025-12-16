@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NUR HANESSA | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#f7fdf4;color:#2f3e2f;}
+
+/* INTRO */
+#intro{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#fce7f3;
+  transition:opacity .6s ease;
+}
+#intro a{
+  display:inline-block;
+  padding:40px 80px;
+  font-size:32px;
+  background-color:#ff1493;
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  cursor:pointer;
+}
+#intro a:hover{
+  transform:scale(1.05);
+}
+
+/* ANIMATION */
+.fade-in{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s ease forwards;
+}
+.delay-1{animation-delay:.3s;}
+.delay-2{animation-delay:.6s;}
+.delay-3{animation-delay:.9s;}
+
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* CLOCK */
+#clock {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff1493;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 200;
+  font-family: "Poppins", sans-serif;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:#ffffffdd;
+backdrop-filter:blur(10px);
+z-index:100;
+}
+.nav__content{
+max-width:1200px;
+margin:auto;
+padding:1rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo{font-size:1.5rem;font-weight:700;color:#4d7c0f;}
+nav ul{list-style:none;display:flex;gap:1.5rem;}
+nav ul li a{text-decoration:none;font-weight:600;color:#374151;}
+
+/* GENERAL */
+section{padding:7rem 1rem;}
+.container{max-width:1200px;margin:auto;}
+h2{font-size:2.4rem;color:#db2777;margin-bottom:1.5rem;}
+p{line-height:1.9;color:#374151;}
+
+/* HOME */
+#home{
+min-height:100vh;
+background:url("hijo 5.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+}
+.home-content{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:4rem;
+align-items:center;
+}
+.home-content h1{font-size:3rem;}
+.home-content span{color:#ec4899;}
+.home-content img{
+width:260px;
+border-radius:50%;
+border:6px solid #f9a8d4;
+}
+
+/* ABOUT */
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:3rem;
+align-items:center;
+}
+.about-grid img{
+width:100%;
+max-width:350px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+.skills{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:1rem;
+margin-top:2rem;
+}
+.skill{
+background:#dcfce7;
+padding:1rem;
+border-radius:15px;
+font-weight:600;
+text-align:center;
+}
+
+/* EDUCATION */
+.education-table{
+width:100%;
+border-collapse:collapse;
+margin-top:2rem;
+}
+.education-table th,
+.education-table td{
+border:2px solid #dcfce7;
+padding:1.5rem;
+text-align:center;
+}
+.education-table th{
+background:#fce7f3;
+font-size:1.2rem;
+}
+.education-table img{
+width:220px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+/* EXPERIENCE */
+#experience{background:#ffffff;}
+.exp-intro h3{
+font-size:1.8rem;
+font-weight:700;
+color:#4d7c0f;
+margin-bottom:1rem;
+}
+.exp-item{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:3rem;
+align-items:center;
+margin-bottom:3.5rem;
+}
+.exp-item:nth-child(even){direction:rtl;}
+.exp-item:nth-child(even) p{direction:ltr;}
+.exp-item img{
+width:100%;
+max-width:400px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+.exp-item p{font-weight:600;}
+
+/* HOBBY */
+.hobby-wrapper{display:flex;align-items:center;gap:1rem;}
+.hobby-container{
+display:flex;
+gap:2rem;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:1rem;
+}
+.hobby-container::-webkit-scrollbar{display:none;}
+.hobby-card{
+min-width:280px;
+background:linear-gradient(135deg,#dcfce7,#fce7f3);
+border-radius:20px;
+padding:1rem;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.hobby-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:1rem;
+}
+.arrow{
+background:#f9a8d4;
+border:none;
+color:white;
+font-size:1.8rem;
+padding:.6rem 1rem;
+border-radius:50%;
+cursor:pointer;
+}
+
+/* CONTACT */
+#contact{
+background:#f0fdf4;
+text-align:center;
+padding:5rem 1rem;
+}
+.contact-icons{
+display:flex;
+justify-content:center;
+gap:2rem;
+margin-top:2rem;
+}
+.icon{width:50px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.home-content,.about-grid,.exp-item{
+grid-template-columns:1fr;
+text-align:center;
+}
+.exp-item:nth-child(even){direction:ltr;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <a onclick="showContent()">Click here to know further about me</a>
+</div>
+<div id="clock"></div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" style="display:none;">
+
+<!-- NAV -->
+<nav>
+<div class="nav__content">
+<div class="logo">NUR HANESSA</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#hobby">Hobby</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="fade-in delay-1">
+<div class="home-content">
+<div>
+<h1>Hi, I'm <span>NUR HANESSA</span></h1>
+<p>Information Management Student with passion for learning and creativity.</p>
+
+<!-- SPOTIFY -->
+<iframe style="border-radius:12px;margin-top:20px"
+src="https://open.spotify.com/embed/track/7F4tV8SiUy6itZTdAzdafO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+</div>
+<img src="1.jpg" alt="Nur Hanessa">
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in delay-2">
+<div class="container">
+<h2>About Me</h2>
+<div class="about-grid">
+<div>
+<p>
+I am an Information Management student who loves learning, creating, and
+exploring the world of information and technology. My studies teach me how to
+manage, organize, and protect data effectively while understanding how
+information impacts our digital lives.
+</p>
+
+<div class="skills">
+<div class="skill">Records Management</div>
+<div class="skill">Teamwork</div>
+<div class="skill">Information Organization</div>
+<div class="skill">Communication</div>
+</div>
+</div>
+<img src="2.jpg" alt="About me">
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="fade-in delay-3">
+<div class="container">
+<h2>Education</h2>
+
+<table class="education-table">
+<tr>
+<th>Level</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>
+<strong>Primary School</strong><br><br>
+<img src="sk 2.jfif">
+</td>
+<td>
+<ul>
+<li>SK Kampung Jawa 2, Klang</li>
+<li>Year: 2012 – 2017</li>
+<li>Sijil UPSR 2017</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>Secondary School</strong><br><br>
+<img src="smkdbd.jfif">
+</td>
+<td>
+<ul>
+<li>SMK Dato Bentara Dalam, Segamat</li>
+<li>Year: 2018 – 2022</li>
+<li>Sijil SPM 2022</li>
+<li>Sijil TVET (PRT)</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td>
+<strong>University</strong><br><br>
+<img src="uitm.png">
+</td>
+<td>
+<ul>
+<li>Universiti Teknologi MARA (UiTM), Segamat</li>
+<li>Year: 2023 – 2026</li>
+</ul>
+</td>
+</tr>
+
+</table>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<div class="container">
+<h2>Experience</h2>
+
+<div class="exp-intro">
+<h3>INTERNSHIP AT PPD, SEGAMAT</h3>
+<p>
+During my internship at the Segamat District Education Office, Unit Buku Rekod Kerajaan (BPK), I gained valuable experience and knowledge in records and document management. I was involved in organizing, labeling, filing, and maintaining government records according to established procedures. This experience helped improve my attention to detail, time management, and sense of responsibility. In addition, I developed better communication and teamwork skills through interactions with officers and staff in the unit.
+</p>
+</div>
+
+<div class="exp-item">
+<p>1. I was responsible for filing files.</p>
+<img src="filing file.jpg">
+</div>
+
+<div class="exp-item">
+<p>2. I helped decorate the Hari Malaysia celebration.</p>
+<img src="help.jpg">
+</div>
+
+<div class="exp-item">
+<p>3. This is the file room where I take worker files.</p>
+<img src="file room.jpg">
+</div>
+
+<div class="exp-item">
+<p>4. This image shows me with friends during my internship.</p>
+<img src="my friends.jpg">
+</div>
+
+</div>
+</section>
+
+<!-- HOBBY -->
+<section id="hobby">
+<div class="container">
+<h2>Things I Like to Do</h2>
+
+<div class="hobby-wrapper">
+<button class="arrow" onclick="scrollHobby(-1)">&#10094;</button>
+
+<div class="hobby-container" id="hobbyScroll">
+<div class="hobby-card"><img src="matcha.jpg"><p>🍵 I love drinking matcha</p></div>
+<div class="hobby-card"><img src="photo.jpg"><p>📸 I love taking photos of food</p></div>
+<div class="hobby-card"><img src="dessert.jpg"><p>🍰 I love eating bread and pastries</p></div>
+<div class="hobby-card"><img src="pickleball.jpg"><p>🏓 I love playing pickleball</p></div>
+</div>
+
+<button class="arrow" onclick="scrollHobby(1)">&#10095;</button>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+<h2>Contact Details</h2>
+<p>If you'd like to get in touch, you can reach me through:</p>
+
+<div class="contact-icons">
+<a href="mailto:nurhanessanooramali@gmail.com"><img src="email.png" class="icon"></a>
+<a href="https://www.instagram.com/hhanisaaa"><img src="ig.jfif" class="icon"></a>
+<a href="https://www.facebook.com/share/16eH5UwQ6x"><img src="fb.png" class="icon"></a>
+<a href="https://www.tiktok.com/@whisperofmatcha"><img src="tik.png" class="icon"></a>
+</div>
+</div>
+</section>
+
+</div>
+
+<script>
+function showContent(){
+  document.getElementById('intro').style.opacity='0';
+  setTimeout(()=>{
+    document.getElementById('intro').style.display='none';
+    document.getElementById('mainContent').style.display='block';
+  },600);
+}
+
+function scrollHobby(dir){
+  document.getElementById("hobbyScroll")
+  .scrollBy({left:dir*320,behavior:"smooth"});
+}
+function updateClockMalaysia() {
+  const clock = document.getElementById("clock");
+  const now = new Date();
+
+  // Convert to Malaysia time (UTC+8)
+  const malaysiaTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Kuala_Lumpur"}));
+
+  let hours = malaysiaTime.getHours();
+  let minutes = malaysiaTime.getMinutes();
+  let seconds = malaysiaTime.getSeconds();
+
+  // Add leading zeros
+  hours = hours < 10 ? "0"+hours : hours;
+  minutes = minutes < 10 ? "0"+minutes : minutes;
+  seconds = seconds < 10 ? "0"+seconds : seconds;
+
+  clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+}
+
+// Update every second
+setInterval(updateClockMalaysia, 1000);
+updateClockMalaysia(); // initial call
+</script>
+
+</body>
+</html>
